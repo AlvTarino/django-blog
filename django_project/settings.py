@@ -140,12 +140,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # 'chieftester90@gmail.com'  Gooogle App Passwords to register the app
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # 'uaxdibmnifncmekf'
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # Gooogle App Passwords to register the app
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  # 'AKIAQLTG3HAJCUAVTJET'
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')  # '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'
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')  # 'django-project-site'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')  
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_SIGNATURE_VERSION = 's3v4'
