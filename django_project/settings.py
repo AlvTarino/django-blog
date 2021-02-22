@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['blogdjangos.herokuapp.com']
 
@@ -135,17 +135,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-home'
 
 LOGIN_URL = 'login'
-# ENDEVOUR TO USE ENVIRONMENT VARIABLES---method used below is not recommended
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'chieftester90@gmail.com'  # os.environ.get('EMAIL_USER') Gooogle App Passwords to register the app
-EMAIL_HOST_PASSWORD = 'uaxdibmnifncmekf'  # os.environ.get('EMAIL_PASS')
-# ENDEVOUR TO USE ENVIRONMENT VARIABLES---method used below is not recommended
-AWS_ACCESS_KEY_ID = 'AKIAQLTG3HAJCUAVTJET'  # os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = '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'  # os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'django-project-site'  # os.environ.get('AWS_STORAGE_BUCKET_NAME')
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # 'chieftester90@gmail.com'  Gooogle App Passwords to register the app
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # 'uaxdibmnifncmekf'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  # 'AKIAQLTG3HAJCUAVTJET'
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')  # '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'
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')  # 'django-project-site'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_SIGNATURE_VERSION = 's3v4'
